@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="0.0060" tests="34" failures="34">
+  <testsuite name="Root Suite" timestamp="2020-11-11T09:33:01" tests="0" time="0.0000" failures="0">
+  </testsuite>
+  <testsuite name="Part 1 -Set theory" timestamp="2020-11-11T09:33:01" tests="10" file="/home/patrik/School/matmod/lab1/lab1.test.js" time="0.0020" failures="10">
+    <testcase name="Part 1 -Set theory Exercise01 should return Set([2, 4, 8])" time="0.0020" classname="Exercise01 should return Set([2, 4, 8])">
+      <failure message="expected {} to deeply equal {}" type="AssertionError"><![CDATA[AssertionError: expected {} to deeply equal {}
+    at Context.<anonymous> (lab1/lab1.test.js:7:16)
+    at processImmediate (internal/timers.js:461:21)]]></failure>
+    </testcase>
+    <testcase name="Part 1 -Set theory Exercise02 should return Set([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])" time="0.0000" classname="Exercise02 should return Set([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])">
+      <failure message="expected {} to deeply equal {}" type="AssertionError"><![CDATA[AssertionError: expected {} to deeply equal {}
+    at Context.<anonymous> (lab1/lab1.test.js:12:16)
+    at processImmediate (internal/timers.js:461:21)]]></failure>
+    </testcase>
+    <testcase name="Part 1 -Set theory Exercise03 should return Set([6])" time="0.0000" classname="Exercise03 should return Set([6])">
+      <failure message="expected {} to deeply equal {}" type="AssertionError"><![CDATA[AssertionError: expected {} to deeply equal {}
+    at Context.<anonymous> (lab1/lab1.test.js:17:16)
+    at processImmediate (internal/timers.js:461:21)]]></failure>
+    </testcase>
+    <testcase name="Part 1 -Set theory Exercise04 should return Set([1, 3, 9])" time="0.0000" classname="Exercise04 should return Set([1, 3, 9])">
+      <failure message="expected {} to deeply equal {}" type="AssertionError"><![CDATA[AssertionError: expected {} to deeply equal {}
+    at Context.<anonymous> (lab1/lab1.test.js:22:16)
+    at processImmediate (internal/timers.js:461:21)]]></failure>
+    </testcase>
+    <testcase name="Part 1 -Set theory Exercise05 should return Set([5, 7])" time="0.0000" classname="Exercise05 should return Set([5, 7])">
+      <failure message="expected {} to deeply equal {}" type="AssertionError"><![CDATA[AssertionError: expected {} to deeply equal {}
+    at Context.<anonymous> (lab1/lab1.test.js:27:16)
+    at processImmediate (internal/timers.js:461:21)]]></failure>
+    </testcase>
+    <testcase name="Part 1 -Set theory Exercise06 should return Set([5, 7])" time="0.0000" classname="Exercise06 should return Set([5, 7])">
+      <failure message="expected {} to deeply equal {}" type="AssertionError"><![CDATA[AssertionError: expected {} to deeply equal {}
+    at Context.<anonymous> (lab1/lab1.test.js:32:16)
+    at processImmediate (internal/timers.js:461:21)]]></failure>
+    </testcase>
+    <testcase name="Part 1 -Set theory Exercise07 should return Set([1, 3, 6, 9])" time="0.0000" classname="Exercise07 should return Set([1, 3, 6, 9])">
+      <failure message="expected {} to deeply equal {}" type="AssertionError"><![CDATA[AssertionError: expected {} to deeply equal {}
+    at Context.<anonymous> (lab1/lab1.test.js:37:16)
+    at processImmediate (internal/timers.js:461:21)]]></failure>
+    </testcase>
+    <testcase name="Part 1 -Set theory Exercise08" time="0.0000" classname="Exercise08">
+      <failure message="expected null to equal true" type="AssertionError"><![CDATA[AssertionError: expected null to equal true
+    at Context.<anonymous> (lab1/lab1.test.js:44:16)
+    at processImmediate (internal/timers.js:461:21)]]></failure>
+    </testcase>
+    <testcase name="Part 1 -Set theory Exercise09" time="0.0000" classname="Exercise09">
+      <failure message="expected null to equal 5" type="AssertionError"><![CDATA[AssertionError: expected null to equal 5
+    at Context.<anonymous> (lab1/lab1.test.js:55:16)
+    at processImmediate (internal/timers.js:461:21)]]></failure>
+    </testcase>
+    <testcase name="Part 1 -Set theory Exercise10" time="0.0000" classname="Exercise10">
+      <failure message="expected null to equal true" type="AssertionError"><![CDATA[AssertionError: expected null to equal true
+    at Context.<anonymous> (lab1/lab1.test.js:65:16)
+    at processImmediate (internal/timers.js:461:21)]]></failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="Part 2 -  Probability" timestamp="2020-11-11T09:33:01" tests="8" file="/home/patrik/School/matmod/lab1/lab1.test.js" time="0.0010" failures="8">
+    <testcase name="Part 2 -  Probability Execise11 should have 3 decimals" time="0.0000" classname="Execise11 should have 3 decimals">
+      <failure message="Cannot read property &apos;toString&apos; of null" type="TypeError"><![CDATA[TypeError: Cannot read property 'toString' of null
+    at Context.<anonymous> (lab1/lab1.test.js:75:44)
+    at processImmediate (internal/timers.js:461:21)]]></failure>
+    </testcase>
+    <testcase name="Part 2 -  Probability Exercise11" time="0.0000" classname="Exercise11">
+      <failure message="expected null to equal 0.167" type="AssertionError"><![CDATA[AssertionError: expected null to equal 0.167
+    at Context.<anonymous> (lab1/lab1.test.js:80:16)
+    at processImmediate (internal/timers.js:461:21)]]></failure>
+    </testcase>
+    <testcase name="Part 2 -  Probability Execise12 should have 3 decimals" time="0.0000" classname="Execise12 should have 3 decimals">
+      <failure message="Cannot read property &apos;toString&apos; of null" type="TypeError"><![CDATA[TypeError: Cannot read property 'toString' of null
+    at Context.<anonymous> (lab1/lab1.test.js:86:44)
+    at processImmediate (internal/timers.js:461:21)]]></failure>
+    </testcase>
+    <testcase name="Part 2 -  Probability Exercise12" time="0.0000" classname="Exercise12">
+      <failure message="expected null to equal 0.667" type="AssertionError"><![CDATA[AssertionError: expected null to equal 0.667
+    at Context.<anonymous> (lab1/lab1.test.js:91:16)
+    at processImmediate (internal/timers.js:461:21)]]></failure>
+    </testcase>
+    <testcase name="Part 2 -  Probability Execise13 should have 3 decimals" time="0.0010" classname="Execise13 should have 3 decimals">
+      <failure message="Cannot read property &apos;toString&apos; of null" type="TypeError"><![CDATA[TypeError: Cannot read property 'toString' of null
+    at Context.<anonymous> (lab1/lab1.test.js:96:44)
+    at processImmediate (internal/timers.js:461:21)]]></failure>
+    </testcase>
+    <testcase name="Part 2 -  Probability Exercise13" time="0.0000" classname="Exercise13">
+      <failure message="expected null to equal 0.333" type="AssertionError"><![CDATA[AssertionError: expected null to equal 0.333
+    at Context.<anonymous> (lab1/lab1.test.js:101:16)
+    at processImmediate (internal/timers.js:461:21)]]></failure>
+    </testcase>
+    <testcase name="Part 2 -  Probability Execise14 should have 3 decimals" time="0.0000" classname="Execise14 should have 3 decimals">
+      <failure message="Cannot read property &apos;toString&apos; of null" type="TypeError"><![CDATA[TypeError: Cannot read property 'toString' of null
+    at Context.<anonymous> (lab1/lab1.test.js:106:40)
+    at processImmediate (internal/timers.js:461:21)]]></failure>
+    </testcase>
+    <testcase name="Part 2 -  Probability Exercise14 should be less than 0.34 and greater than 0.33" time="0.0000" classname="Exercise14 should be less than 0.34 and greater than 0.33">
+      <failure message="expected null to be a number or a date" type="AssertionError"><![CDATA[AssertionError: expected null to be a number or a date
+    at Context.<anonymous> (lab1/lab1.test.js:111:16)
+    at processImmediate (internal/timers.js:461:21)]]></failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="Part 3 - Combinatorics" timestamp="2020-11-11T09:33:01" tests="4" file="/home/patrik/School/matmod/lab1/lab1.test.js" time="0.0010" failures="4">
+    <testcase name="Part 3 - Combinatorics Exercise 15" time="0.0000" classname="Exercise 15">
+      <failure message="expected null to equal 1" type="AssertionError"><![CDATA[AssertionError: expected null to equal 1
+    at Context.<anonymous> (lab1/lab1.test.js:118:16)
+    at processImmediate (internal/timers.js:461:21)]]></failure>
+    </testcase>
+    <testcase name="Part 3 - Combinatorics Exercise 16" time="0.0000" classname="Exercise 16">
+      <failure message="expected null to equal 60" type="AssertionError"><![CDATA[AssertionError: expected null to equal 60
+    at Context.<anonymous> (lab1/lab1.test.js:124:16)
+    at processImmediate (internal/timers.js:461:21)]]></failure>
+    </testcase>
+    <testcase name="Part 3 - Combinatorics Exercise 17" time="0.0000" classname="Exercise 17">
+      <failure message="expected null to equal 120" type="AssertionError"><![CDATA[AssertionError: expected null to equal 120
+    at Context.<anonymous> (lab1/lab1.test.js:131:16)
+    at processImmediate (internal/timers.js:461:21)]]></failure>
+    </testcase>
+    <testcase name="Part 3 - Combinatorics Exercise 18" time="0.0010" classname="Exercise 18">
+      <failure message="expected null to equal 1" type="AssertionError"><![CDATA[AssertionError: expected null to equal 1
+    at Context.<anonymous> (lab1/lab1.test.js:140:16)
+    at processImmediate (internal/timers.js:461:21)]]></failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="Part 4 - Probabilities" timestamp="2020-11-11T09:33:01" tests="5" file="/home/patrik/School/matmod/lab1/lab1.test.js" time="0.0010" failures="5">
+    <testcase name="Part 4 - Probabilities Exercise19" time="0.0000" classname="Exercise19">
+      <failure message="expected 0 to equal 0.28" type="AssertionError"><![CDATA[AssertionError: expected 0 to equal 0.28
+    at Context.<anonymous> (lab1/lab1.test.js:148:16)
+    at processImmediate (internal/timers.js:461:21)]]></failure>
+    </testcase>
+    <testcase name="Part 4 - Probabilities Exercise20" time="0.0000" classname="Exercise20">
+      <failure message="expected 0 to equal 0.123" type="AssertionError"><![CDATA[AssertionError: expected 0 to equal 0.123
+    at Context.<anonymous> (lab1/lab1.test.js:152:16)
+    at processImmediate (internal/timers.js:461:21)]]></failure>
+    </testcase>
+    <testcase name="Part 4 - Probabilities Exercise21" time="0.0000" classname="Exercise21">
+      <failure message="expected 0 to equal 0.157" type="AssertionError"><![CDATA[AssertionError: expected 0 to equal 0.157
+    at Context.<anonymous> (lab1/lab1.test.js:156:16)
+    at processImmediate (internal/timers.js:461:21)]]></failure>
+    </testcase>
+    <testcase name="Part 4 - Probabilities Exercise22" time="0.0010" classname="Exercise22">
+      <failure message="expected 0 to equal 0.1" type="AssertionError"><![CDATA[AssertionError: expected 0 to equal 0.1
+    at Context.<anonymous> (lab1/lab1.test.js:160:16)
+    at processImmediate (internal/timers.js:461:21)]]></failure>
+    </testcase>
+    <testcase name="Part 4 - Probabilities Exercise23" time="0.0000" classname="Exercise23">
+      <failure message="expected 0 to equal 0.76" type="AssertionError"><![CDATA[AssertionError: expected 0 to equal 0.76
+    at Context.<anonymous> (lab1/lab1.test.js:165:16)
+    at processImmediate (internal/timers.js:461:21)]]></failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="Part 5 - Conditional Probabilities" timestamp="2020-11-11T09:33:01" tests="7" file="/home/patrik/School/matmod/lab1/lab1.test.js" time="0.0010" failures="7">
+    <testcase name="Part 5 - Conditional Probabilities Exercise24" time="0.0000" classname="Exercise24">
+      <failure message="expected 0 to equal 0.5" type="AssertionError"><![CDATA[AssertionError: expected 0 to equal 0.5
+    at Context.<anonymous> (lab1/lab1.test.js:171:16)
+    at processImmediate (internal/timers.js:461:21)]]></failure>
+    </testcase>
+    <testcase name="Part 5 - Conditional Probabilities Exercise25" time="0.0000" classname="Exercise25">
+      <failure message="expected 0 to equal 0.33" type="AssertionError"><![CDATA[AssertionError: expected 0 to equal 0.33
+    at Context.<anonymous> (lab1/lab1.test.js:176:16)
+    at processImmediate (internal/timers.js:461:21)]]></failure>
+    </testcase>
+    <testcase name="Part 5 - Conditional Probabilities Exercise26" time="0.0010" classname="Exercise26">
+      <failure message="expected 0 to equal 0.667" type="AssertionError"><![CDATA[AssertionError: expected 0 to equal 0.667
+    at Context.<anonymous> (lab1/lab1.test.js:180:16)
+    at processImmediate (internal/timers.js:461:21)]]></failure>
+    </testcase>
+    <testcase name="Part 5 - Conditional Probabilities Exercise27" time="0.0000" classname="Exercise27">
+      <failure message="expected 0 to equal 0.667" type="AssertionError"><![CDATA[AssertionError: expected 0 to equal 0.667
+    at Context.<anonymous> (lab1/lab1.test.js:185:16)
+    at processImmediate (internal/timers.js:461:21)]]></failure>
+    </testcase>
+    <testcase name="Part 5 - Conditional Probabilities Exercise28" time="0.0000" classname="Exercise28">
+      <failure message="expected 0 to equal 0.205" type="AssertionError"><![CDATA[AssertionError: expected 0 to equal 0.205
+    at Context.<anonymous> (lab1/lab1.test.js:189:16)
+    at processImmediate (internal/timers.js:461:21)]]></failure>
+    </testcase>
+    <testcase name="Part 5 - Conditional Probabilities Exercise29" time="0.0000" classname="Exercise29">
+      <failure message="expected 0 to equal 0.25" type="AssertionError"><![CDATA[AssertionError: expected 0 to equal 0.25
+    at Context.<anonymous> (lab1/lab1.test.js:195:16)
+    at processImmediate (internal/timers.js:461:21)]]></failure>
+    </testcase>
+    <testcase name="Part 5 - Conditional Probabilities Exercise30" time="0.0000" classname="Exercise30">
+      <failure message="expected 0 to equal 0.495" type="AssertionError"><![CDATA[AssertionError: expected 0 to equal 0.495
+    at Context.<anonymous> (lab1/lab1.test.js:199:16)
+    at processImmediate (internal/timers.js:461:21)]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>
