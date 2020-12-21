@@ -12,5 +12,8 @@
     "chai": "^4.2.0",
     "mocha": "^8.2.1",
     "mocha-junit-reporter": "^2.0.0"
+  },
+  "dependencies": {
+    "gaussian": "^1.1.0"
   }
 }

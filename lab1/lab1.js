@@ -1,7 +1,12 @@
 /*
  * MA1487 Matematisk modellering
  * Kursmoment 01
- *
+ * 
+ * -------------------------------------
+ * Namn: Patrik Karlsson
+ * Akronym: paka17
+ * -------------------------------------
+ * 
  * Exercise 01-10 Set theory
  * Exercise 11-14 Probability
  * Exercise 15-18 Combinatorics and Probability
@@ -21,7 +26,6 @@
  */
 
 
-
 /**
  * Exercise01
  * Create the following sets
@@ -33,13 +37,11 @@
  * @returns {Set} the set A ∩ B
  */
 function exercise01() {
-  let A = new Set([2, 4, 6, 8]);
-  let B = new Set([1, 2, 3, 4, 8, 9]);
+    const A = new Set([2, 4, 6, 8]);
+    const B = new Set([1, 2, 3, 4, 8, 9]);
 
-  return new Set([...A].filter(x => B.has(x)));
+    return new Set([...A].filter(x => B.has(x)));
 }
-
-
 
 /**
  * Exercise02
@@ -52,13 +54,11 @@ function exercise01() {
  * @returns {Set} the set A ∪ B
  */
 function exercise02() {
-  let A = new Set([1,3,5,7,9]);
-  let B = new Set([1,2,3,4,5,6,7,8,9,10]);
+    const A = new Set([1,3,5,7,9]);
+    const B = new Set([1,2,3,4,5,6,7,8,9,10]);
 
-  return new Set([...A, ...B]);
+    return new Set([...A, ...B]);
 }
-
-
 
 /**
  * Exercise03
@@ -70,15 +70,14 @@ function exercise02() {
  * @returns {Set} the set A ∩ CB
  */
 function exercise03() {
-  let U = new Set([1, 2, 3, 4, 5, 6, 7, 8, 9]);
-  let A = new Set([2, 4, 6, 8]);
-  let B = new Set([1, 2, 3, 4, 8, 9]);
-  
-  let CB = new Set([...U].filter(x => !B.has(x)));
+    const U = new Set([1, 2, 3, 4, 5, 6, 7, 8, 9]);
+    const A = new Set([2, 4, 6, 8]);
+    const B = new Set([1, 2, 3, 4, 8, 9]);
 
-  return new Set([...A].filter(x => CB.has(x)));
+    const CB = new Set([...U].filter(x => !B.has(x)));
+
+    return new Set([...A].filter(x => CB.has(x)));
 }
-
 
 /**
  * Exercise04
@@ -90,15 +89,14 @@ function exercise03() {
  * @returns {Set} the set CA ∩ B
  */
 function exercise04() {
-  let U = new Set([1, 2, 3, 4, 5, 6, 7, 8, 9]);
-  let A = new Set([2, 4, 6, 8]);
-  let B = new Set([1, 2, 3, 4, 8, 9]);
+    const U = new Set([1, 2, 3, 4, 5, 6, 7, 8, 9]);
+    const A = new Set([2, 4, 6, 8]);
+    const B = new Set([1, 2, 3, 4, 8, 9]);
 
-  let CA = new Set([...U].filter(x => !A.has(x)));
+    const CA = new Set([...U].filter(x => !A.has(x)));
 
-  return new Set([...CA].filter(x => B.has(x)));
+    return new Set([...CA].filter(x => B.has(x)));
 }
-
 
 /**
  * Exercise05
@@ -110,17 +108,15 @@ function exercise04() {
  * @returns {Set} the set CA ∩ CB
  */
 function exercise05() {
-  let U = new Set([1, 2, 3, 4, 5, 6, 7, 8, 9]);
-  let A = new Set([2, 4, 6, 8]);
-  let B = new Set([1, 2, 3, 4, 8, 9]);
+    const U = new Set([1, 2, 3, 4, 5, 6, 7, 8, 9]);
+    const A = new Set([2, 4, 6, 8]);
+    const B = new Set([1, 2, 3, 4, 8, 9]);
 
-  let CA = new Set([...U].filter(x => !A.has(x)));
-  let CB = new Set([...U].filter(x => !B.has(x)));
+    const CA = new Set([...U].filter(x => !A.has(x)));
+    const CB = new Set([...U].filter(x => !B.has(x)));
 
-  return new Set([...CA].filter(x => CB.has(x)));
+    return new Set([...CA].filter(x => CB.has(x)));
 }
-
-
 
 /**
  * Exercise06
@@ -132,16 +128,14 @@ function exercise05() {
  * @returns {Set} the set C(A ∪ B)
  */
 function exercise06() {
-  let U = new Set([1, 2, 3, 4, 5, 6, 7, 8, 9]);
-  let A = new Set([2, 4, 6, 8]);
-  let B = new Set([1, 2, 3, 4, 8, 9]);
+    const U = new Set([1, 2, 3, 4, 5, 6, 7, 8, 9]);
+    const A = new Set([2, 4, 6, 8]);
+    const B = new Set([1, 2, 3, 4, 8, 9]);
 
-  let AB = new Set([...A, ...B]);
-  
-  return new Set([...U].filter(x => !AB.has(x)));
+    const AB = new Set([...A, ...B]);
+
+    return new Set([...U].filter(x => !AB.has(x)));
 }
-
-
 
 /**
  * Exercise07
@@ -153,20 +147,18 @@ function exercise06() {
  * @returns {Set} the set (A ∩ CB)∪(CA ∩ B)
  */
 function exercise07() {
-  let U = new Set([1, 2, 3, 4, 5, 6, 7, 8, 9]);
-  let A = new Set([2, 4, 6, 8]);
-  let B = new Set([1, 2, 3, 4, 8, 9]);
+    const U = new Set([1, 2, 3, 4, 5, 6, 7, 8, 9]);
+    const A = new Set([2, 4, 6, 8]);
+    const B = new Set([1, 2, 3, 4, 8, 9]);
 
-  let CA = new Set([...U].filter(x => !A.has(x)));
-  let CB = new Set([...U].filter(x => !B.has(x)));
+    const CA = new Set([...U].filter(x => !A.has(x)));
+    const CB = new Set([...U].filter(x => !B.has(x)));
 
-  let ACB = new Set([...A].filter(x => CB.has(x)));
-  let CAB = new Set([...CA].filter(x => B.has(x)));
+    const ACB = new Set([...A].filter(x => CB.has(x)));
+    const CAB = new Set([...CA].filter(x => B.has(x)));
 
-  return new Set([...ACB, ...CAB]);
+    return new Set([...ACB, ...CAB]);
 }
-
-
 
 /**
  * Exercise 08
@@ -175,15 +167,12 @@ function exercise07() {
  * @returns {Boolean} true if A is a proper subset of B, otherwise false
  */
 function exercise08(A, B) {
-  
-  if ([...A].every(elem => [...B].includes(elem)) && ([...A].length != [...B].length))  {
-   return true;
-  }
+    if ([...A].every(elem => [...B].includes(elem)) && ([...A].length != [...B].length))  {
+        return true;
+    }
 
-  return false;
+    return false;
 }
-
-
 
 /**
  * Exercise09
@@ -196,12 +185,10 @@ function exercise08(A, B) {
  *
  */
 function exercise09(A, B) {
-  let union = new Set([...A, ...B]);
+    const union = new Set([...A, ...B]);
 
-  return [...union].length;
+    return [...union].length;
 }
-
-
 
 /**
  * Exercise10
@@ -213,16 +200,14 @@ function exercise09(A, B) {
  * @return {Boolean} true if A and B are disjoint, otherwise false
  */
 function exercise10(A, B) {
-  let intersection = new Set([...A].filter(x => B.has(x)));
+    const intersection = new Set([...A].filter(x => B.has(x)));
 
-  if ([...intersection].length == 0) {
-    return true;
-  }
-
-  return false;
+    if ([...intersection].length == 0) {
+        return true;
+    }
+    
+    return false;
 }
-
-
 
 /**
  * Exercise11
@@ -234,7 +219,7 @@ function exercise10(A, B) {
  * @returns {Number}    The probability a n-sided dice will show exactly p dots with 3 decimal precision
  */
 function exercise11(n, p) {
-  return (1 / n).toFixed(3);
+    return (1 / n).toFixed(3);
 }
 
 /**
@@ -248,7 +233,7 @@ function exercise11(n, p) {
  * with 3 decimal precision
  */
 function exercise12(n, p) {
-  return (p / n).toFixed(3);
+    return (p / n).toFixed(3);
 }
 
 /**
@@ -262,7 +247,7 @@ function exercise12(n, p) {
  * with 3 decimal precision
  */
 function exercise13(n, p) {
-  return (p / n).toFixed(3);
+    return ((n - (p - 1)) / n).toFixed(3);
 }
 
 /**
@@ -274,9 +259,23 @@ function exercise13(n, p) {
  * @returns {Number}    The relative frequency a dice will show a 5 or 6 with 3 decimal precision
  */
 function exercise14() {
-    return null
-}
+    const throws = 100000;
 
+    let sum = 0;
+    let i = 0;
+
+    while (i <= throws) {
+        let outcome = Math.ceil(Math.random() * 6);
+
+        if (outcome >= 5) {
+            ++sum;
+        }
+
+        ++i;
+    }
+
+    return parseFloat((sum / throws).toFixed(3));
+}
 
 /**
  * Exercise15
@@ -285,11 +284,13 @@ function exercise14() {
  * @param {Number} n
  * @return {Number} n-factorial (n!)
  */
-
 function exercise15(n) {
-    return null
-}
+    if (n === 0 || n === 1) {
+        return 1;
+    }
 
+    return (n * exercise15(n - 1))
+}
 
 /**
  * Exercise16
@@ -301,9 +302,8 @@ function exercise15(n) {
  * @return {Number}
  */
 function exercise16(n, k) {
-    return null
+    return (exercise15(n) / exercise15(n - k));
 }
-
 
 /**
  * Exercise17
@@ -315,10 +315,12 @@ function exercise16(n, k) {
  * @return {Number}
  */
 function exercise17(n, k) {
-    return null
+    const first = exercise15(n);
+    const second = exercise15(k);
+    const third = exercise15(n - k);
+
+    return (first / (second * (third)));
 }
-
-
 
 /**
  * Exercise16
@@ -331,10 +333,17 @@ function exercise17(n, k) {
  * @param {Number} m total number of people in from group 2
  * @return {Number} Probability described above
  */
-function exercise18() {
-    return null
-}
+function exercise18(n, m) {
+    const five = exercise17((n + m), 5);
+    
+    // 3 persons are chosen from group 1
+    const three = exercise17(n, 3);
+    
+    // 2 persons are choosen from group 2
+    const two = exercise17(m, 2);
 
+    return ((three * two) / five).toFixed(3);
+}
 
 /**
  * Exercise19
@@ -349,9 +358,13 @@ function exercise18() {
  * @returns {Number} the probability Pr(A ∪ B) with 3 decimal precision
  */
 function exercise19() {
-    return 0;
-}
+    const A = 0.16;
+    const AnB = 0.003;
+    const CAnB = 0.12;
+    const B = CAnB + AnB;
 
+    return ((A + B) - AnB).toFixed(3);
+}
 
 /**
  * Exercise20
@@ -366,7 +379,10 @@ function exercise19() {
  * @returns {Number} the probability Pr(B) with 3 decimal precision
  */
 function exercise20() {
-    return 0;
+    const AnB = 0.003;
+    const CAnB = 0.12;
+
+    return (CAnB + AnB);
 }
 
 /**
@@ -382,9 +398,11 @@ function exercise20() {
  * @returns {Number} the probability Pr(A ∩ CB) with 3 decimal precision
  */
 function exercise21() {
-    return 0;
-}
+    const A = 0.16;
+    const AnB = 0.003;
 
+    return (A - AnB);
+}
 
 /**
  * Exercise22
@@ -404,9 +422,15 @@ function exercise21() {
  * @returns {Number} probability of Pr(CA ∩ CB) with 3 decimal precision
  */
 function exercise22(x, y, z) {
-    return 0;
-}
+    const A = x;
+    const B = y;
+    const AnB = z;
+    const AuB = A + B - AnB;
 
+    const CAnCB = (x => (1-x).toFixed(3));
+
+    return CAnCB(AuB);
+}
 
 /**
  * Exercise23
@@ -425,7 +449,15 @@ function exercise22(x, y, z) {
  * @returns {Number} the probability Pr(A ∪ B ∪ C) with 3 decimal precision
  */
 function exercise23() {
-    return 0;
+    const A = 0.2;
+    const B = 0.3;
+    const C = 0.4;
+
+    const AnB = A * B;
+    const AnC = A * C;
+    const BnC = 0;
+
+    return ((A + B + C - AnB - AnC - BnC + (AnB * BnC))).toFixed(3);
 }
 
 /**
@@ -440,7 +472,10 @@ function exercise23() {
  * @returns {Number} the probability Pr(A|B) with 3 decimal precision
  */
 function exercise24(x, y, z) {
-    return 0;
+    const B = y;
+    const AnB = z;
+
+    return (AnB / B).toFixed(3);
 }
 
 /**
@@ -455,7 +490,10 @@ function exercise24(x, y, z) {
  * @returns {Number} the probability Pr(A|B) with 3 decimal precision
  */
 function exercise25() {
-    return 0;
+    const AnB = 0.212;
+    const B = AnB + 0.431;
+
+    return (AnB / B).toFixed(3);
 }
 
 /**
@@ -470,7 +508,10 @@ function exercise25() {
  * @returns {Number} the probability Pr(A|B) with 3 decimal precision
  */
 function exercise26() {
-    return 0;
+    const PAnB = 0.2;
+    const B = 0.3;
+
+    return (PAnB / B).toFixed(3);
 }
 
 /**
@@ -486,7 +527,10 @@ function exercise26() {
  *
  */
 function exercise27() {
-    return 0;
+    const tossOne = (2 / 6);
+    const tossTwo = (2 / 6);
+
+    return (tossOne + tossTwo).toFixed(3);
 }
 
 /**
@@ -503,9 +547,13 @@ function exercise27() {
  *                     exactly n times with 3 decimal precision.
  */
 function exercise28(x, n) {
-    return 0;
-}
+    const loss = 10 - n;
+    const factorial10 = exercise15(10);
+    const factorialN = exercise15(n) * exercise15(loss);
+    const PLoss = 1 - x;
 
+    return parseFloat((factorial10 / factorialN) * Math.pow(x, n) * Math.pow(PLoss, loss)).toFixed(3);
+}
 
 /**
  * Exercise29 (Bayes' theorem)
@@ -522,7 +570,11 @@ function exercise28(x, n) {
  * with 3 decimal precision
  */
 function exercise29() {
-    return 0;
+    const A = 30;
+    const B = 60;
+    const C = 60;
+
+    return (A / (B + C)).toFixed(3);
 }
 
 /**
@@ -534,7 +586,12 @@ function exercise29() {
  *
  */
 function exercise30(x, y, M, F) {
-    return 0;
+    const male = x * M;
+    const female = y * F;
+    const overall = male + female;
+
+    // Nämns inte att det ska vara "with 3 decimal precision"
+    return (female / overall).toFixed(3);
 }
 
 

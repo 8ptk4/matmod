@@ -1,5 +1,5 @@
 const assert = require("chai").assert;
-const f = require("./lab1");
+const f = require("../lab1/lab1.js");
 
 describe("Part 1 -Set theory", function () {
     it("Exercise01 should return Set([2, 4, 8])", function () {
@@ -46,7 +46,6 @@ describe("Part 1 -Set theory", function () {
         assert.equal(f.exercise08(A, A), false);
     })
 
-
     it("Exercise09", function () {
         const A = new Set([1, 2, 3, 4, 5])
         const B = new Set([4, 5, 6, 7, 8])
@@ -66,6 +65,7 @@ describe("Part 1 -Set theory", function () {
         assert.equal(f.exercise10(B, C), false)
         assert.equal(f.exercise10(A, A), false)
     })
+
 });
 
 
@@ -79,7 +79,6 @@ describe("Part 2 -  Probability", function () {
         assert.equal(f.exercise11(6, 4), 0.167)
         assert.equal(f.exercise11(11, 5), 0.091)
     })
-
 
     it("Execise12 should have 3 decimals", function () {
         const decimals = f.exercise12(6, 4).toString().split('.')
@@ -97,8 +96,9 @@ describe("Part 2 -  Probability", function () {
     })
 
     it("Exercise13", function () {
-        assert.equal(f.exercise13(6, 4), 0.333)
-        assert.equal(f.exercise13(6, 5), 0.167)
+        assert.equal(f.exercise13(6, 4), 0.500)
+        assert.equal(f.exercise13(6, 5), 0.333)
+        assert.equal(f.exercise13(6, 6), 0.167)
     })
 
     it("Execise14 should have 3 decimals", function () {
@@ -118,22 +118,17 @@ describe("Part 3 - Combinatorics", function () {
         assert.equal(f.exercise15(10), 3628800)
     });
 
-
     it("Exercise 16", function () {
         assert.equal(f.exercise16(5, 3), 60)
         assert.equal(f.exercise16(10, 5), 30240)
         assert.equal(f.exercise16(12, 4), 11880)
     });
 
-
     it("Exercise 17", function () {
         assert.equal(f.exercise17(10, 3), 120)
         assert.equal(f.exercise17(15, 6), 5005)
         assert.equal(f.exercise17(20, 20), 1)
     });
-
-
-
 
     it("Exercise 18", function () {
         assert.equal(f.exercise18(3, 2), 1.000)
@@ -178,7 +173,6 @@ describe("Part 5 - Conditional Probabilities", function () {
     it("Exercise26", function () {
         assert.equal(f.exercise26(), 0.667)
     })
-
 
     it("Exercise27", function () {
         assert.equal(f.exercise27(), 0.667)
