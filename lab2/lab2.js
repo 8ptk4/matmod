@@ -421,7 +421,7 @@ function exercise14(pA, pB) {
  * @return {Number} Minutes needed for the meeting rounded up. 
  */
 function exercise15() {
-	const n = 36;			// 
+	const n = 36;
 	const a = 3 * 36;		// Average
 	const d = 1 * 36;		// Deviation
 	const z = 1.6449; 		// Z score

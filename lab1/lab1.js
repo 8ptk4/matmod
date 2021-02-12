@@ -563,18 +563,30 @@ function exercise28(x, n) {
  *
  * A student enrolled in the A-programme passes an exam with 0.6 probability
  * A student enrolled in the B-programme passes an exam with 0.5 probability
- * A student enrolled in the B-programme passes an exam with 0.4 probability
+ * A student enrolled in the C-programme passes an exam with 0.4 probability
  *
  * Student X passed the exam.
  * Compute and return the probaility student X is enrolled in the A-programme
  * with 3 decimal precision
  */
 function exercise29() {
-    const A = 30;
-    const B = 60;
-    const C = 60;
+    const a_n_students = 30;
+    const b_n_students = 60;
+    const c_n_students = 60;
 
-    return (A / (B + C)).toFixed(3);
+    const PXa = 0.6; 
+    const PXb = 0.5;
+    const PXc = 0.4;
+
+    const PY = (0.6 * 30) + (0.5 * 60) + (0.4 * 60);
+
+    /* Bayes' theorem 
+    P(Y|Xa)P(Xa) / P(Y)
+    */
+
+    const PXaY = (0.6 * 30) / PY;
+    
+    return PXaY.toFixed(3);
 }
 
 /**

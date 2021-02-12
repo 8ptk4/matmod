@@ -6,6 +6,12 @@
 // TODO: Patrik Karlsson
 // TODO: paka17
 
+const gaussian = require('gaussian');
+
+function distribution(mean, stdDev) {
+    return gaussian(mean, Math.pow(stdDev, 2));
+}
+
 /*-------------------------------------------------
 -------------------------------------------------
 
@@ -20,6 +26,43 @@ e.g. 1.96 for two sided 95% confidence of the normal distribution.
 
 -------------------------------------------------
 -------------------------------------------------*/
+function GetZPercent(z) {
+    //z == number of standard deviations from the mean
+
+    //if z is greater than 6.5 standard deviations from the mean
+    //the number of significant digits will be outside of a reasonable 
+    //range
+    if ( z < -6.5)
+      return 0.0;
+
+    if ( z > 6.5) 
+      return 1.0;
+
+    var factK = 1;
+    var sum = 0;
+    var term = 1;
+    var k = 0;
+    var loopStop = Math.exp(-23);
+
+    while(Math.abs(term) > loopStop) {
+      term = .3989422804 * Math.pow(-1,k) * Math.pow(z,k) / (2 * k + 1) / Math.pow(2,k) * Math.pow(z,k+1) / factK;
+      sum += term;
+      k++;
+      factK *= k;
+    }
+
+    sum += 0.5;
+
+    return sum;
+}
+
+
+function getStandardDeviation (array, mean) {
+    const n = array.length;
+
+    return Math.sqrt(array.map(x => Math.pow(x - mean, 2)).reduce((a, b) => a + b) / (n - 1));
+}
+
 
 /**
  * -------------------- Svenska -------------------------
@@ -41,7 +84,24 @@ e.g. 1.96 for two sided 95% confidence of the normal distribution.
  * @returns {Number} p-value of differance with 4 decimals
  */
 function exercise01() {
-    return null;
+
+    /* Hypotheses
+        H0 = piA - piB = 0
+        H1 = piA - piB != 0
+    */
+
+    const pA = 250 / 1000;
+    const pB = 100 / 300;
+
+    const p = ((250 + 100) / (1000 + 300));
+
+    // Test function
+    const Z = (pA - pB) / Math.sqrt(p * (1 - p) * (1 / 1000 + 1 / 300))
+    
+    const pValue = GetZPercent(Z).toFixed(4);
+    const TwosidedPvalue = pValue * 2
+
+    return TwosidedPvalue;
 }
 
 /**
@@ -60,7 +120,28 @@ function exercise01() {
  * @returns {Number[]} [lower bound, upper bound], with 4 decimal precision
  */
 function exercise02(data) {
-    return 0;
+    const sampleSize = data.length;
+
+    const sampleTotal = data.reduce(function(a, b) {
+        return a + b;
+    }, 0);
+
+    const sampleMean = sampleTotal / sampleSize;
+    const standardDeviation = getStandardDeviation(data, sampleMean);
+    
+    // Value taken from Commonly used z - values for Confidence Interval
+    const zValue = 1.96;
+
+    const standardError = (standardDeviation / Math.sqrt(sampleSize));
+    const marginOfError = standardError * zValue;
+
+    const lowerBound = sampleMean - marginOfError;
+    const upperBound = sampleMean + marginOfError;
+
+    // Took me a while to realize that i had to use Bessel's correction (n - 1) for 
+    // the calculation of the standard deviation. Because this is a sample!
+
+    return [lowerBound.toFixed(4), upperBound.toFixed(4)];
 }
 
 
@@ -95,7 +176,16 @@ function exercise02(data) {
  * 
  */
 function exercise03(confidence, maxWidth) {
-    return 0;
+    /* 
+        Engelska delen utav uppgiften står det, "Round to nearest integer" vilket 
+        bör vara "Round a number upward to its nearest integer".
+    */ 
+
+    const p = 0.5;
+
+    const n = ((2 * confidence / (maxWidth)) * (2 * confidence / (maxWidth))) * (p * p);
+
+    return Math.ceil(n);
 }
 
 /**
@@ -119,7 +209,18 @@ function exercise03(confidence, maxWidth) {
  * 
  */
 function exercise04() {
-    return 0;
+    const targetTemp= -12;
+    const t1 = -11.5;
+
+    const standardDeviation = 1;
+
+	const z = (targetTemp - t1) / standardDeviation;
+
+	if (z > 0) {
+		return parseFloat(1 - distribution(0, 1).cdf(z)).toFixed(3);
+	}
+
+	return (distribution(0, 1).cdf(z)).toFixed(3);
 }
 
 /**
@@ -152,7 +253,46 @@ function exercise04() {
  * Hint: The sample size is small
  */
 function exercise05(preCourseResult, postCourseResult) {
-    return null;
+  const table = {};
+    table.pre = preCourseResult;
+    table.preN = table.pre.length;
+    table.post = postCourseResult;
+    table.postN = table.pre.length;
+    table.diff = [];
+    table.diffSqr = [];
+    
+    table.post.map((x, i) => {
+        table.diff.push(x - table.pre[i]);
+    });
+    
+    const calcSum = ((dataSet) =>
+    dataSet.reduce(function(a, b) {
+        return a + b;
+    }, 0))
+
+    const xSum = calcSum(table.diff);
+
+    table.diff.map((x, i) => {
+        table.diffSqr.push(x * x);
+    });
+
+    const xxSum = calcSum(table.diffSqr);
+    
+    const xMean = xSum / table.preN;
+
+    const s_part1 = xxSum;
+    const s_part2 = xSum**2 / table.preN;
+
+    const s = Math.sqrt((s_part1 - s_part2) / (table.preN - 1));
+    
+    const t = 1.895;
+
+    const confidenceInterval = t * Math.sqrt(s**2 / table.preN);
+
+    const lower = xMean - confidenceInterval;
+    // const upper = xMean + confidenceInterval;
+
+    return lower > 0;
 }
 
 /**
@@ -184,7 +324,43 @@ function exercise05(preCourseResult, postCourseResult) {
  * 
  */
 function exercise06(x, y) {
-    return null;
+    const table = {
+        "x": [],
+        "y": [],
+        "xx": [],
+        "xy": [],
+        "yy": [],
+    };
+
+    const calcSum = ((dataSet) =>
+        dataSet.reduce(function(a, b) {
+            return a + b;
+        }, 0))
+
+    x.map((x, i) => {
+        table.x.push(x);
+        table.y.push(y[i])
+        table.xx.push(x * x);
+        table.xy.push(x * y[i]);
+        table.yy.push(y[i] * y[i]);
+        
+        table.xSum = calcSum(table.x);
+        table.ySum = calcSum(table.y);
+        table.xxSum = calcSum(table.xx);
+        table.xySum = calcSum(table.xy);
+        table.yySum = calcSum(table.yy);
+    });
+
+    const xMean = (1 / table.x.length) * table.xSum;
+    const yMean = (1 / table.y.length) * table.ySum;
+
+    const xxS = table.xxSum - ((1 / table.xx.length) * table.xSum * table.xSum);
+    const xyS = table.xySum - ((1 / table.xy.length) * table.xSum * table.ySum);
+    
+    const b = xyS / xxS;
+    const a = (yMean - (b * xMean));
+
+    return [a, b];
 }
 
 /**
@@ -204,7 +380,74 @@ function exercise06(x, y) {
  * Assume normal distributed residuals and a sample sice of at least 30
  */
 function exercise07(x, y) {
-    return null;
+    const table = {
+        "x": x,
+        "y": y,
+        "xx": [],
+        "yy": [],
+        "xy": []
+    };
+
+    const n = table.x.length;
+    const calcSum = ((dataSet) =>
+        dataSet.reduce(function(a, b) {
+            return a + b;
+        }, 0))
+    
+    table.y.map((x, i) => {
+        table.yy.push(x * x);
+    });
+    
+    table.x.map((x, i) => {
+        table.xx.push(x * x);
+    });
+
+    table.x.map((x, i) => {
+        table.xy.push(table.y[i] * x);
+    });
+    
+    const xSum = calcSum(table.x);
+    const ySum = calcSum(table.y);
+    const xxSum = calcSum(table.xx);
+    const yySum = calcSum(table.yy);
+    const xySum = calcSum(table.xy);
+    
+    const xxS = xxSum - ((1 / n) * xSum * xSum);
+    const xyS = xySum - ((1 / n) * xSum * ySum);
+    
+    const xMean = xSum / n;
+    const yMean = ySum / n;
+
+    const b = xyS / xxS;
+    const a = yMean - (b * xMean);
+
+    const SST = yySum - ySum**2 / n;
+
+    const SSR_part1 = (xySum - (xSum * ySum) / n);
+    const SSR_part2 = (xySum - (xSum * ySum) / n) / b;
+    
+    const SSR = SSR_part1 / SSR_part2 * SSR_part1
+
+    const SSE = SST - SSR;
+
+    const MSE = SSE / (n - 2);
+
+    const sApart1 = 1 / n;
+    const sApart2 = xMean**2 / SSR_part2;
+    const sApart3 = sApart1 + sApart2;
+    const sA = Math.sqrt(MSE * sApart3);
+
+    const sB = Math.sqrt(MSE / SSR_part2);
+
+    const t = 1.96;
+
+    const aLower = a - t * sA;
+    const aUpper = a + t * sA;
+    
+    const bLower = b - t * sB;
+    const bUpper = b + t * sB;
+
+    return [aLower, aUpper, bLower, bUpper];
 }
 
 
